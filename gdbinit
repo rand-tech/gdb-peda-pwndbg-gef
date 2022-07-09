@@ -32,3 +32,10 @@ end
 document init-gef
 Initializes GEF (GDB Enhanced Features)
 end
+
+define init-bef
+source ~/bef/gef.py
+end
+document init-bef
+Initializes bata GEF (bata GDB Enhanced Features)
+end

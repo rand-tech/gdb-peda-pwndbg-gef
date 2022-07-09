@@ -10,6 +10,7 @@ gdb-peda-intel
 gdb-peda-arm
 gdb-pwndbg
 gdb-gef
+gdb-bef
 ```
 
 For more information read the relevant blog post:

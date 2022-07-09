@@ -73,6 +73,28 @@ fi
 echo "[+] Downloading GEF..."
 git clone https://github.com/hugsy/gef.git ~/gef
 
+# download bef (bata gef)
+if [ -d ~/bef]; then
+    echo "[-] Bata GEF found"
+    read -p "skip download to continue? (enter 'y' or 'n') " skip_bef
+
+    if [ $skip_bef = 'n' ]; then
+        rm -rf ~/bef
+        git clone https://github.com/bata24/gef.git ~/bef
+
+        cd ~/bef
+        ./install.sh
+    else
+        echo "Bef skipped"
+    fi
+else
+    echo "[+] Downloading bata GEF..."
+    git clone https://github.com/bata24/gef.git ~/bef
+  
+    cd ~/bef
+    ./install.sh
+fi
+
 cd $installer_path
 
 echo "[+] Setting .gdbinit..."
@@ -84,7 +106,8 @@ cp gdbinit ~/.gdbinit
     sudo cp gdb-peda-arm /usr/bin/gdb-peda-arm &&\
     sudo cp gdb-peda-intel /usr/bin/gdb-peda-intel &&\
     sudo cp gdb-pwndbg /usr/bin/gdb-pwndbg &&\
-    sudo cp gdb-gef /usr/bin/gdb-gef
+    sudo cp gdb-gef /usr/bin/gdb-gef && \
+    sudo cp gdb-bef /usr/bin/gdb-bef
 } || {
   echo "[-] Permission denied"
     exit

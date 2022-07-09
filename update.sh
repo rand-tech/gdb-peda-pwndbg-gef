@@ -13,3 +13,7 @@ git pull
 echo "[+] Updating GEF..."
 cd ~/gef
 git pull
+
+echo "[+] Updating BEF..."
+cd ~/bef
+git pull
