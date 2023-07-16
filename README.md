@@ -16,7 +16,7 @@ gdb-bef
 # Installation
 
 ```
-cd ~ && git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef-bef.git
+cd ~ && git clone https://github.com/rand-tech/gdb-peda-pwndbg-gef-bef.git
 cd ~/gdb-peda-pwndbg-gef-bef
 ./install.sh
 ```
